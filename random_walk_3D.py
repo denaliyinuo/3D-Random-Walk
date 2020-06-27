@@ -50,19 +50,18 @@ def reshape_array(old_array):
 def plot_3D(x_array0, y_array0, z_array0, j):
     return ax.plot3D(x_array0, y_array0, z_array0, label='Random Walk #' + str(j + 1))
 
-
-
-# def origin(n):
-#     x0 = np.zeros(n, )
-#     return x0
-
+# n equals number of steps, m equals number of 'walkers'
 
 n = 1000
 m = 3
+
+# sets empty arrays for each direction 
+
 x_array = np.zeros([n, m])
 y_array = np.zeros([n, m])
 z_array = np.zeros([n, m])
 
+# two for-loops to calculate each step of each walker 
 
 for j in range(m):
     x = 0
@@ -80,6 +79,8 @@ for j in range(m):
     z_array0 = reshape_array(z_array[:, j])
     plot_3D(x_array0, y_array0, z_array0, j)
 
+
+# set title, corrdinate labels, and legend
 
 ax.set_xlabel('x-direction')
 ax.set_ylabel('y-direction')
